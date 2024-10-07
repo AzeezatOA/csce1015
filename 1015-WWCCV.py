@@ -3,6 +3,10 @@
 
 # anything that starts with a pound sign (hashtag if you are under 30) is a comment. The computer ignores these.
 
+#a function that uses the luhn code
+import luhn
+def is_credit_card_valid(card_number):
+    return luhn.verify(card_number)
 # Let's tell the world whose awful credit card validator this is.
 print ("Azeezat Akinboro Modified This Credit Card Validator")
 
@@ -14,7 +18,7 @@ card_number = input("Enter your 16-digit credit card number: ")
 # len means 'length', and the '==' is testing one thing against the other. A single equal sign would set one thing equal to the other (not what we want to do). 
 # card_number.isdigit() is checking if this is numbers instead of someone typing 'cheeseburger' for their credit card number.
 
-if len(card_number) == 16 and card_number.isdigit():     
-    print ("Card is valid.")
+if is_credit_card_valid(card_number):     
+    print ("The credit card number is valid.")
 else:
-    print ("Invalid card number. It must be 16 digits long.") 
+    print ("The credit card number is invalid.") 
